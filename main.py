@@ -47,15 +47,16 @@ with st.sidebar:
 
         submitted = st.form_submit_button("Submit")
 
-st.header('CoxPH-based model for predicting survival of chondrosarcoma', anchor='survival-of-chondrosarcoma')
+st.title(
+    'A machine learning-based predictive model for predicting  lateral lymph node metastasis in patients with '
+    'papillary thyroid carcinoma')
 
 if submitted:
     df = preprocessing([Sex_val, Age_val, BMI_val, Diabetes_val, CLT_val, Solid_val, Hypoechogenicity_val,
                         AT_val, Irregular_shape_val, ETE_val, Microcalcification_val, BRAF_val, Number_val,
                         Size_val, Location_val, Bilaterality_val, CLNM_val, CLNR_val])
-    pred = model.predict(df.T.values)
-    st.write('预测结果：')
-    if pred[0] == 0:
-        st.title('无侧颈区淋巴结转移 :smiley:')
-    elif pred[0] == 1:
-        st.title('有侧颈区淋巴结转移 :disappointed:')
+    pred = model.predict_proba(df.T.values)
+    if pred[:, 1][0] <= 0.5:
+        st.header('Risk grouping for LNM: High Risk Probability of LNM: {}%'.format(round(pred[:, 1][0]*100, 2)))
+    elif pred[:, 1][0] > 0.5:
+        st.header('Risk grouping for LNM: High Risk Probability of LNM: {}%'.format(round(pred[:, 1][0]*100, 2)))
