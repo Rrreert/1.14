@@ -169,8 +169,8 @@ def predict():
                                     'SEER_stage_Unknown/unstaged', 'Sex_Female', 'Sex_Male', 'Surgery_No',
                                     'Surgery_Other_surgery', 'Surgery_Radical', 'T_stage_T1', 'T_stage_T2',
                                     'T_stage_T3', 'T_stage_TX', 'Tumor_number_Multiple',
-                                    'Tumor_number_Single', 'Tumor_size_<11 8', 'Tumor_size_>=11 8',
-                                    'Tumor_size_Unknown', 'status'])
+                                    'Tumor_number_Single', 'Tumor_size_<11.8', 'Tumor_size_>=11.8',
+                                    'Tumor_size_Unknown'])
 
     test_df = pd.concat([test_df, pd.DataFrame([dic])])
 
