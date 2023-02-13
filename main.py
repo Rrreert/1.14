@@ -175,6 +175,7 @@ def predict():
     test_df = pd.concat([test_df, pd.DataFrame([dic])])
 
     test_df.fillna(0, inplace=True)
+    st.dataframe(test_df)
 
     survival = model.predict_survival(test_df)
     # x_axis = []
