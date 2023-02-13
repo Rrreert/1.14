@@ -26,7 +26,7 @@ def load_setting():
 
         'SEER_stage': {'values': ["Distant", "Localized", "Regional", "Unknown/unstaged"], 'type': 'selectbox',
                        'init_value': 0, 'add_after': ''},
-        'Radiation': {'values': ["No/Unknown", "Yes"], 'type': 'radio', 'init_value': 0, 'add_after': ''},
+        'Radiation': {'values': ["None/Unknown", "Yes"], 'type': 'radio', 'init_value': 0, 'add_after': ''},
         'Chemotherapy': {'values': ["No/Unknown", "Yes"], 'type': 'radio', 'init_value': 0, 'add_after': ''},
         'Surgery': {'values': ["Radical", "No", "Other_Surgery"], 'type': 'selectbox',
                     'init_value': 0,
