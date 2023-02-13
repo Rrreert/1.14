@@ -177,14 +177,13 @@ def predict():
     test_df.fillna(0, inplace=True)
     
     survival = model.predict_survival(test_df)
-    survival = survival.tolist()
+    survival = survival.tolist()[0]
     # x_axis = []
     # for inx in survival[0].x:
     #     if inx <= 155:
     #         x_axis.append(inx)
     #     else:
     #         break
-    st.write(survival)
     data = {
         'survival': survival,
         'times': [i for i in range(1, len(survival) + 1)],
