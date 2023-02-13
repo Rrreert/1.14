@@ -1,5 +1,5 @@
-joblib==1.1.0
-pandas==1.4.2
-streamlit==1.15.1
-scikit-learn==1.1.1
+joblib
+pandas
+streamlit
+scikit-learn
 pysurvival
