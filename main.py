@@ -184,7 +184,7 @@ def predict():
     #         x_axis.append(inx)
     #     else:
     #         break
-    st.write(type(survival))
+    st.write(survival)
     data = {
         'survival': survival,
         'times': [i for i in range(1, len(survival) + 1)],
