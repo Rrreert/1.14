@@ -5,8 +5,8 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 
-model1 = joblib.load('models/CPH.pkl')
-model2 = joblib.load('models/Deepsurv.pkl')
+model1 = joblib.load('CPH.pkl')
+model2 = joblib.load('Deepsurv.pkl')
 
 
 @st.cache(show_spinner=False)
