@@ -177,6 +177,7 @@ def predict():
     test_df.fillna(0, inplace=True)
     
     survival = model.predict_survival(test_df)
+    survival = survival.tolist()
     # x_axis = []
     # for inx in survival[0].x:
     #     if inx <= 155:
@@ -189,9 +190,9 @@ def predict():
         'times': [i for i in range(1, len(survival) + 1)],
         'No': len(st.session_state['patients']) + 1,
         'arg': {key: st.session_state[key] for key in input_keys},
-        '3-year': survival[:, 35],
-        '5-year': survival[:, 59],
-        '8-year': survival[:, 95],
+        '3-year': survival[35],
+        '5-year': survival[59],
+        '8-year': survival[95],
     }
     st.session_state['patients'].append(
         data
