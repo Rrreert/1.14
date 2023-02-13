@@ -175,8 +175,7 @@ def predict():
     test_df = pd.concat([test_df, pd.DataFrame([dic])])
 
     test_df.fillna(0, inplace=True)
-    st.dataframe(test_df)
-
+    
     survival = model.predict_survival(test_df)
     # x_axis = []
     # for inx in survival[0].x:
@@ -184,6 +183,7 @@ def predict():
     #         x_axis.append(inx)
     #     else:
     #         break
+    st.write(survival)
     data = {
         'survival': survival,
         'times': [i for i in range(1, len(survival) + 1)],
