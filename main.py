@@ -37,7 +37,7 @@ def load_setting():
     }
     input_keys = ['Age', 'Sex', 'Race', 'Marital', 'Tumor_size', 'Tumor_number',
                   "T_stage", "N_stage", "M_stage", "Grade", "SEER_stage", "Radiation", "Surgery",
-                  "Chemotherapy"]
+                  "Chemotherapy", "Primary_site"]
     return settings, input_keys
 
 
