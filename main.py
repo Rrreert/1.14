@@ -159,19 +159,19 @@ def predict():
         value = st.session_state[key]
         dic['{}_{}'.format(key, value)] = 1
     test_df = pd.DataFrame(columns=['Age_35-65', 'Age_<35', 'Age_>65', 'Chemotherapy_No/Unknown',
-                                    'Chemotherapy_Yes', 'Grade_I-II', 'Grade_III-IV', 'Grade_Unknown',
-                                    'M_stage_M0', 'M_stage_M1', 'M_stage_M1a', 'M_stage_M1b',
-                                    'Marital_Married', 'Marital_Other', 'N_stage_N0', 'N_stage_N1',
-                                    'N_stage_NX', 'Race_Black', 'Race_Other', 'Race_White',
-                                    'Radiation_None/Unknown', 'Radiation_Yes', 'SEER_stage_Distant',
-                                    'SEER_stage_Localized', 'SEER_stage_Regional',
-                                    'SEER_stage_Unknown/unstaged', 'Sex_Female', 'Sex_Male', 'Surgery_No',
-                                    'Surgery_Other_surgery', 'Surgery_Radical', 'T_stage_T1', 'T_stage_T2',
-                                    'T_stage_T3', 'T_stage_TX', 'Tumor_number_Multiple',
-                                    'Tumor_number_Single', 'Tumor_size_<11.8', 'Tumor_size_>=11.8',
-                                    'Tumor_size_Unknown', 'Primary_site_C40.0', 'Primary_site_C40.2',
-                                    'Primary_site_C41.0', 'Primary_site_C41.1', 'Primary_site_C41.4',
-                                    'Primary_site_Other_site'])
+                                   'Chemotherapy_Yes', 'Grade_I-II', 'Grade_III-IV', 'Grade_Unknown',
+                                   'M_stage_M0', 'M_stage_M1', 'M_stage_M1a', 'M_stage_M1b',
+                                   'Marital_Married', 'Marital_Other', 'N_stage_N0', 'N_stage_N1',
+                                   'N_stage_NX', 'Primary_Site_C40.0', 'Primary_Site_C40.2',
+                                   'Primary_Site_C41.0', 'Primary_Site_C41.1', 'Primary_Site_C41.4',
+                                   'Primary_Site_Other_site', 'Race_Black', 'Race_Other', 'Race_White',
+                                   'Radiation_None/Unknown', 'Radiation_Yes', 'SEER_stage_Distant',
+                                   'SEER_stage_Localized', 'SEER_stage_Regional',
+                                   'SEER_stage_Unknown/unstaged', 'Sex_Female', 'Sex_Male', 'Surgery_No',
+                                   'Surgery_Other_surgery', 'Surgery_Radical', 'T_stage_T1', 'T_stage_T2',
+                                   'T_stage_T3', 'T_stage_TX', 'Tumor_number_Multiple',
+                                   'Tumor_number_Single', 'Tumor_size_<11.8', 'Tumor_size_>=11.8',
+                                   'Tumor_size_Unknown'])
 
     test_df = pd.concat([test_df, pd.DataFrame([dic])])
 
