@@ -141,7 +141,7 @@ def plot_patients():
                         'Patients': [item['No']],
                         '3-Year': ["{:.2f}%".format(item['3-year'] * 100)],
                         '5-Year': ["{:.2f}%".format(item['5-year'] * 100)],
-                        '8-Year': ["{:.2f}%".format(item['8-year'] * 100)]
+                        '8-Year': ["{:.2f}%".format(item['10-year'] * 100)]
                     },
                     **item['arg']
                 )
@@ -232,7 +232,7 @@ def plot_below_header():
     with col6:
         st.metric(
             label='8-Year survival probability',
-            value="{:.2f}%".format(st.session_state['patients'][-1]['8-year'] * 100)
+            value="{:.2f}%".format(st.session_state['patients'][-1]['10-year'] * 100)
         )
     st.write('')
     st.write('')
