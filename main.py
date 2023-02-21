@@ -245,7 +245,7 @@ def plot_below_header():
     st.write('')
 
 
-st.header('Deep model for predicting survival of lung papillary adenocarcinoma',
+st.header('DeepSurv for predicting cancer-specific survival of Osteosarcoma',
           anchor='Cancer-specific survival of osteosarcoma')
 if st.session_state['patients']:
     plot_below_header()
