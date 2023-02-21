@@ -5,8 +5,7 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 
-model1 = joblib.load('CPH.pkl')
-model2 = joblib.load('Deepsurv.pkl')
+model = joblib.load('DeepSurv.pkl')
 
 
 @st.cache(show_spinner=False)
@@ -31,6 +30,7 @@ def load_setting():
         'Surgery': {'values': ["Radical", "No", "Other_Surgery"], 'type': 'selectbox',
                     'init_value': 0,
                     'add_after': ''},
+        'Primary_site': {'values': ["C40.0", "C40.2", "C41.0", "C41.1", "C41.4", "Other_site"], 'type': 'selectbox', 'init_value': 0, 'add_after': ''},
 
         'Model': {'values': ["CPH", "Deepsurv"], 'type': 'selectbox',
                   'init_value': 0, 'add_after': ''},
@@ -44,13 +44,13 @@ def load_setting():
 settings, input_keys = load_setting()
 
 
-def load_model(val):
-    model = ''
-    if val == 'CPH':
-        model = model1
-    elif val == 'Deepsurv':
-        model = model2
-    return model
+# def load_model(val):
+#     model = ''
+#     if val == 'CPH':
+#         model = model1
+#     elif val == 'Deepsurv':
+#         model = model2
+#     return model
 
 
 def get_code():
@@ -154,7 +154,6 @@ def plot_patients():
 # @st.cache(show_spinner=True)
 def predict():
     print('update patients . ##########')
-    model = load_model(st.session_state["Model"])
     dic = {}
     for key in input_keys[:-1]:
         value = st.session_state[key]
@@ -170,7 +169,9 @@ def predict():
                                     'Surgery_Other_surgery', 'Surgery_Radical', 'T_stage_T1', 'T_stage_T2',
                                     'T_stage_T3', 'T_stage_TX', 'Tumor_number_Multiple',
                                     'Tumor_number_Single', 'Tumor_size_<11.8', 'Tumor_size_>=11.8',
-                                    'Tumor_size_Unknown'])
+                                    'Tumor_size_Unknown', 'Primary_site_C40.0', 'Primary_site_C40.2',
+                                    'Primary_site_C41.0', 'Primary_site_C41.1', 'Primary_site_C41.4',
+                                    'Primary_site_Other_site'])
 
     test_df = pd.concat([test_df, pd.DataFrame([dic])])
 
