@@ -5,7 +5,7 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 
-model = joblib.load('DeepSurv.pkl')
+model1 = joblib.load('DeepSurv.pkl')
 
 
 @st.cache(show_spinner=False)
@@ -32,12 +32,12 @@ def load_setting():
                     'add_after': ''},
         'Primary_site': {'values': ["C40.0", "C40.2", "C41.0", "C41.1", "C41.4", "Other_site"], 'type': 'selectbox', 'init_value': 0, 'add_after': ''},
 
-        'Model': {'values': ["CPH", "Deepsurv"], 'type': 'selectbox',
-                  'init_value': 0, 'add_after': ''},
+#         'Model': {'values': ["CPH", "Deepsurv"], 'type': 'selectbox',
+#                   'init_value': 0, 'add_after': ''},
     }
     input_keys = ['Age', 'Sex', 'Race', 'Marital', 'Tumor_size', 'Tumor_number',
                   "T_stage", "N_stage", "M_stage", "Grade", "SEER_stage", "Radiation", "Surgery",
-                  "Chemotherapy", 'Model']
+                  "Chemotherapy"]
     return settings, input_keys
 
 
@@ -177,7 +177,7 @@ def predict():
 
     test_df.fillna(0, inplace=True)
     
-    survival = model.predict_survival(test_df)
+    survival = model1.predict_survival(test_df)
     survival = survival.tolist()[0]
     # x_axis = []
     # for inx in survival[0].x:
