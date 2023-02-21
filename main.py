@@ -192,7 +192,7 @@ def predict():
         'arg': {key: st.session_state[key] for key in input_keys},
         '3-year': survival[35],
         '5-year': survival[59],
-        '8-year': survival[95],
+        '10-year': survival[95],
     }
     st.session_state['patients'].append(
         data
