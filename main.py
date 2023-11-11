@@ -1,6 +1,6 @@
 # import streamlit as st
 # import pandas as pd
-import joblib
+# import joblib
 # import plotly.express as px
 
 # st.set_page_config(layout="wide")
@@ -270,8 +270,8 @@ import plotly.express as px
 from pysurvival.utils import load_model
 
 if 'model_deep' not in st.session_state:
-    st.session_state["model_deep"] = joblib.load('DeepSurv.zip')
-    st.session_state["model_nmtlr"] = joblib.load('NMTLR.zip')
+    st.session_state["model_deep"] = load_model('DeepSurv.zip')
+    st.session_state["model_nmtlr"] = load_model('NMTLR.zip')
 
 
 def get_select1():
