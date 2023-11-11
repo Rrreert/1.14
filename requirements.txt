@@ -1,6 +1,6 @@
 streamlit==1.27.0
 pysurvival==0.1.2
 plotly
-pyarrow==6.0.0
+pyarrow==7.0.0
 sklearn==0.0.post11
 scikit-learn
